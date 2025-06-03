@@ -23,23 +23,23 @@ Attendees are expected to bring laptops. Sandbox environments will be provided. 
 > [!IMPORTANT]
 > 9:00 am - 9:30 am - [Introduction, Set Up and Overview of Fabric Analytics Platform](exercise-0-setup/start.md)
 > 
-> 9:30 am - 10:45 am - [Module 1 - Ingest data using Fabric Data Factory, Copy Job and Mirroring](./module-1-developing-spark/developing-spark.md) 
+> 9:30 am - 10:45 am - [Ingest data using Fabric Data Factory, Copy Job and Mirroring](./module-1-developing-spark/developing-spark.md) 
 > 
 > 10:45 am - 11:00 am - Break
 > 
-> 11:00 am - 12:00 pm - [Module 2 - Transform data using Spark and SQL](./module-2-orchestrating-spark/orchestrating-spark.md)
+> 11:00 am - 12:00 pm - [Transform data using Spark and SQL](./module-2-orchestrating-spark/orchestrating-spark.md)
 > 
 > 12:00 am - 01:00 pm - Lunch Break
 > 
-> 01:00 pm - 02:00 pm - [Module 3 - Query data using Fabric Data Agents and interact with OneLake](./module-3-scheduling-monitoring-debugging/scheduling-monitoring-debugging.md)
+> 01:00 pm - 02:00 pm - [Query data using Fabric Data Agents and interact with OneLake](./module-3-scheduling-monitoring-debugging/scheduling-monitoring-debugging.md)
 > 
 > 02:00 pm - 02:15 pm - Break
 >
-> 02:15 pm - 03:45 pm - [Module 4 - Monitoring, admin, capacities and automation](./module-4-tuning-optimizing-scaling/tuning-optimizing-scaling.md)
+> 02:15 pm - 03:45 pm - [Monitoring, admin, capacities and automation](./module-4-tuning-optimizing-scaling/tuning-optimizing-scaling.md)
 >
 > 03:45 pm - 04:00 pm - Break
 > 
-> 04:00 pm - 05:00 pm - [Module 5 - Wrap Up and Q&A](module-5-cicd-misc/cicd-misc.md)
+> 04:00 pm - 05:00 pm - [Wrap Up and Q&A](module-5-cicd-misc/cicd-misc.md)
 > 
 > 04:30 pm - 05:00 pm - Q&A
 >
