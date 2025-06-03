@@ -1,4 +1,4 @@
-# DataCeili2025
+# DataCeili2025 - Hands on with Fabric: end to end data engineering
 Are you wanting to learn how to use Microsoft Fabric for data engineering, data warehousing or other data projects? Then this is the session for you!
 This repo contains all the information and content you need to successfully complete the DataCeili training day.
 
