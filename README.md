@@ -9,7 +9,7 @@ This repo contains all the information and content you need to successfully comp
 - Orchestrate with complex and parallel pipelines
 - Explore different options for querying and consumption
 - Ingest and transform streaming data
-- Demonstrate ways to OneLake with Fabric engines, and external engines
+- Demonstrate ways to integrate OneLake with Fabric engines, and external engines
 - Work through options to monitor your solution, including how you can make your Fabric components more resilient and gain visibility into Fabric capacities.
 - Deploy Fabric environments with command line interfaces which enable automation.
 
@@ -31,11 +31,11 @@ Attendees are expected to bring laptops. Sandbox environments will be provided. 
 > 
 > 12:00 am - 01:00 pm - Lunch Break
 > 
-> 01:00 pm - 02:30 pm - [Module 3 - Query data using Fabric Data Agents and interact with OneLake](./module-3-scheduling-monitoring-debugging/scheduling-monitoring-debugging.md)
+> 01:00 pm - 02:00 pm - [Module 3 - Query data using Fabric Data Agents and interact with OneLake](./module-3-scheduling-monitoring-debugging/scheduling-monitoring-debugging.md)
 > 
-> 02:30 pm - 02:45 pm - Break
+> 02:00 pm - 02:15 pm - Break
 >
-> 02:45 pm - 03:45 pm - [Module 4 - Monitoring, admin and automation](./module-4-tuning-optimizing-scaling/tuning-optimizing-scaling.md)
+> 02:15 pm - 03:45 pm - [Module 4 - Monitoring, admin, capacities and automation](./module-4-tuning-optimizing-scaling/tuning-optimizing-scaling.md)
 >
 > 03:45 pm - 04:00 pm - Break
 > 
