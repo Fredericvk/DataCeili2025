@@ -3,7 +3,7 @@ Are you wanting to learn how to use Microsoft Fabric for data engineering, data 
 This repo contains all the information and content you need to successfully complete the DataCeili training day.
 
 
-In this hands-on workshop we will:
+## In this hands-on workshop we will:
 - Ingest data from a range of sources using Data Factory and Fabric Mirroring
 - Transform data with Spark and Data Warehouse
 - Orchestrate with complex and parallel pipelines
@@ -15,7 +15,7 @@ In this hands-on workshop we will:
 
 Attendees are expected to bring laptops. Sandbox environments will be provided. At least basic knowledge of Fabric and/or Data Engineering / Data Warehousing is helpful. This session is intermediate but will be guided.
 
-Agenda:
+# Agenda:
 > [!TIP]
 > You can progress through these exercises at your own pace. While we have structured logical breaks within the session, these are merely suggestions. You are not required to stop if you prefer to continue working. These breaks are provided to accommodate those who may need them. Feel free to continue through the material as fits your learning style and needs.
 
