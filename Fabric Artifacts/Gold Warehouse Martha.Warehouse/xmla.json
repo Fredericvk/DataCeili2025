@@ -1,0 +1,1108 @@
+{
+  "name": "{{Dataset_Name}}",
+  "compatibilityLevel": 1604,
+  "model": {
+    "name": "{{Dataset_Name}}",
+    "culture": "en-US",
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "gold_beerreviews",
+        "sourceLineageTag": "[dbo].[gold_beerreviews]",
+        "columns": [
+          {
+            "name": "review_time",
+            "dataType": "int64",
+            "sourceColumn": "review_time",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "review_time",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "review_overall",
+            "dataType": "double",
+            "sourceColumn": "review_overall",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_overall",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "review_aroma",
+            "dataType": "double",
+            "sourceColumn": "review_aroma",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_aroma",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "review_appearance",
+            "dataType": "double",
+            "sourceColumn": "review_appearance",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_appearance",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "review_profilename",
+            "dataType": "string",
+            "sourceColumn": "review_profilename",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "review_profilename",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "beer_style",
+            "dataType": "string",
+            "sourceColumn": "beer_style",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "beer_style",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "review_palate",
+            "dataType": "double",
+            "sourceColumn": "review_palate",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_palate",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "review_taste",
+            "dataType": "double",
+            "sourceColumn": "review_taste",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_taste",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "beer_name",
+            "dataType": "string",
+            "sourceColumn": "beer_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "beer_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "beer_abv",
+            "dataType": "double",
+            "sourceColumn": "beer_abv",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "beer_abv",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "beer_id",
+            "dataType": "int64",
+            "sourceColumn": "beer_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "beer_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "brewery_id",
+            "dataType": "string",
+            "sourceColumn": "brewery_id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "brewery_id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_loaddate",
+            "dataType": "string",
+            "sourceColumn": "_loaddate",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_loaddate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_loadrunid",
+            "dataType": "string",
+            "sourceColumn": "_loadrunid",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_loadrunid",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "gold_beerreviews",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "gold_breweries",
+        "sourceLineageTag": "[dbo].[gold_breweries]",
+        "columns": [
+          {
+            "name": "address_1",
+            "dataType": "string",
+            "sourceColumn": "address_1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "address_1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "address_2",
+            "dataType": "string",
+            "sourceColumn": "address_2",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "address_2",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "address_3",
+            "dataType": "string",
+            "sourceColumn": "address_3",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "address_3",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "brewery_type",
+            "dataType": "string",
+            "sourceColumn": "brewery_type",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "brewery_type",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "city",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "id",
+            "dataType": "string",
+            "sourceColumn": "id",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "id",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "latitude",
+            "dataType": "double",
+            "sourceColumn": "latitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "latitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "longitude",
+            "dataType": "double",
+            "sourceColumn": "longitude",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "longitude",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "name",
+            "dataType": "string",
+            "sourceColumn": "name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "phone",
+            "dataType": "string",
+            "sourceColumn": "phone",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "phone",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "postal_code",
+            "dataType": "string",
+            "sourceColumn": "postal_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "postal_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "dataType": "string",
+            "sourceColumn": "state",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "state",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "state_province",
+            "dataType": "string",
+            "sourceColumn": "state_province",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "state_province",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "street",
+            "dataType": "string",
+            "sourceColumn": "street",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "street",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "website_url",
+            "dataType": "string",
+            "sourceColumn": "website_url",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "website_url",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_loaddate",
+            "dataType": "string",
+            "sourceColumn": "_loaddate",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_loaddate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_loadrunid",
+            "dataType": "string",
+            "sourceColumn": "_loadrunid",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_loadrunid",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "gold_breweries",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "gold_pg",
+        "sourceLineageTag": "[dbo].[gold_pg]",
+        "columns": [
+          {
+            "name": "flag_code",
+            "dataType": "string",
+            "sourceColumn": "flag_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "flag_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "happiness_rank_2024",
+            "dataType": "int64",
+            "sourceColumn": "happiness_rank_2024",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "happiness_rank_2024",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "happiness_score_2024",
+            "dataType": "decimal",
+            "sourceColumn": "happiness_score_2024",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "happiness_score_2024",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "latest_score_change",
+            "dataType": "decimal",
+            "sourceColumn": "latest_score_change",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "latest_score_change",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "happiness_rank_2022",
+            "dataType": "int64",
+            "sourceColumn": "happiness_rank_2022",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "happiness_rank_2022",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "happiness_score_2022",
+            "dataType": "decimal",
+            "sourceColumn": "happiness_score_2022",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "happiness_score_2022",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "id",
+            "dataType": "int64",
+            "sourceColumn": "id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "gold_pg",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "gold_worlddata",
+        "sourceLineageTag": "[dbo].[gold_worlddata]",
+        "columns": [
+          {
+            "name": "flag_code",
+            "dataType": "string",
+            "sourceColumn": "flag_code",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "flag_code",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "country",
+            "dataType": "string",
+            "sourceColumn": "country",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "country",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "latest_score_change",
+            "dataType": "decimal",
+            "sourceColumn": "latest_score_change",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "latest_score_change",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "happiness_rank_2022",
+            "dataType": "int64",
+            "sourceColumn": "happiness_rank_2022",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "happiness_rank_2022",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "happiness_score_2022",
+            "dataType": "decimal",
+            "sourceColumn": "happiness_score_2022",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "happiness_score_2022",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "totalbeerconsumption_2022_1000L",
+            "dataType": "int64",
+            "sourceColumn": "totalbeerconsumption_2022_1000L",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "totalbeerconsumption_2022_1000L",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "beerconsumptionpercapita_2022_L",
+            "dataType": "decimal",
+            "sourceColumn": "beerconsumptionpercapita_2022_L",
+            "sourceProviderType": "decimal",
+            "sourceLineageTag": "beerconsumptionpercapita_2022_L",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_loaddate",
+            "dataType": "string",
+            "sourceColumn": "_loaddate",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_loaddate",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "_loadrunid",
+            "dataType": "string",
+            "sourceColumn": "_loadrunid",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "_loadrunid",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "gold_worlddata",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
+        "name": "lh_gold",
+        "sourceLineageTag": "[dbo].[lh_gold]",
+        "columns": [
+          {
+            "name": "brewery_id",
+            "dataType": "int64",
+            "sourceColumn": "brewery_id",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "brewery_id",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "brewery_name",
+            "dataType": "string",
+            "sourceColumn": "brewery_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "brewery_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "review_time",
+            "dataType": "int64",
+            "sourceColumn": "review_time",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "review_time",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "review_overall",
+            "dataType": "double",
+            "sourceColumn": "review_overall",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_overall",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "review_aroma",
+            "dataType": "double",
+            "sourceColumn": "review_aroma",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_aroma",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "review_appearance",
+            "dataType": "double",
+            "sourceColumn": "review_appearance",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_appearance",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "review_profilename",
+            "dataType": "string",
+            "sourceColumn": "review_profilename",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "review_profilename",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "beer_style",
+            "dataType": "string",
+            "sourceColumn": "beer_style",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "beer_style",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "review_palate",
+            "dataType": "double",
+            "sourceColumn": "review_palate",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_palate",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "review_taste",
+            "dataType": "double",
+            "sourceColumn": "review_taste",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "review_taste",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "beer_name",
+            "dataType": "string",
+            "sourceColumn": "beer_name",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "beer_name",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "beer_abv",
+            "dataType": "double",
+            "sourceColumn": "beer_abv",
+            "sourceProviderType": "float",
+            "sourceLineageTag": "beer_abv",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ]
+          },
+          {
+            "name": "beer_beerid",
+            "dataType": "int64",
+            "sourceColumn": "beer_beerid",
+            "formatString": "0",
+            "sourceProviderType": "int",
+            "sourceLineageTag": "beer_beerid",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Partition_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "lh_gold",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "22c876fef6484abd4ee90c7de7c56199",
+        "fromTable": "gold_breweries",
+        "fromColumn": "country",
+        "toTable": "gold_worlddata",
+        "toColumn": "country",
+        "relyOnReferentialIntegrity": true,
+        "securityFilteringBehavior": "none"
+      },
+      {
+        "name": "4f39eff018ead9e71e625166d3dcb8c9",
+        "fromTable": "gold_beerreviews",
+        "fromColumn": "brewery_id",
+        "toTable": "gold_breweries",
+        "toColumn": "id",
+        "relyOnReferentialIntegrity": true,
+        "securityFilteringBehavior": "none"
+      }
+    ],
+    "expressions": [
+      {
+        "name": "DatabaseQuery",
+        "kind": "m",
+        "expression": "let\n    database = {{TDS_Endpoint}}\nin\n    database\n"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "SourceLineageTagType",
+        "value": "DatabaseFullyQualifiedName"
+      }
+    ]
+  }
+}
