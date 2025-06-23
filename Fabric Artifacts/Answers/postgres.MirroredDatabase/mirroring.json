@@ -1,0 +1,39 @@
+{
+  "properties": {
+    "source": {
+      "type": "AzurePostgreSql",
+      "typeProperties": {
+        "connection": "875e5141-8520-4e98-a8ae-48972f4da4a3",
+        "landingZone": {
+          "type": "MountedRelationalDatabase",
+          "typeProperties": {}
+        }
+      }
+    },
+    "target": {
+      "type": "MountedRelationalDatabase",
+      "typeProperties": {
+        "defaultSchema": "dbo",
+        "format": "Delta"
+      }
+    },
+    "mountedTables": [
+      {
+        "source": {
+          "typeProperties": {
+            "schemaName": "public",
+            "tableName": "worldhappiness_index"
+          }
+        }
+      },
+      {
+        "source": {
+          "typeProperties": {
+            "schemaName": "public",
+            "tableName": "newtable"
+          }
+        }
+      }
+    ]
+  }
+}

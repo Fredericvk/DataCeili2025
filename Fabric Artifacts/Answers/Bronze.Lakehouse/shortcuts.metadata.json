@@ -1,0 +1,27 @@
+[
+  {
+    "name": "pg_worldhappiness_index",
+    "path": "/Tables",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/_public/worldhappiness_index",
+        "itemId": "d38b93ae-ee1c-980c-4cc1-3c3d199653d6",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "MountedRelationalDatabase"
+      }
+    }
+  },
+  {
+    "name": "adls_beerreviews",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "a4852822-028d-4e7a-915a-403768529fdf",
+        "location": "https://beerdata.dfs.core.windows.net",
+        "subpath": "/datasources/beer_reviews"
+      }
+    }
+  }
+]
