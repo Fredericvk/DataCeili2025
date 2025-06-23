@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventstream",
+    "displayName": "ProcessSparkLogs"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "0b226d40-62f3-9433-4504-e4eaa0fbfbc9"
+  }
+}

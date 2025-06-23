@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Eventhouse",
+    "displayName": "SparkMonitoring",
+    "description": "SparkMonitoring"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5b6c3fd1-6cf5-8eb5-4626-dc088239c3c9"
+  }
+}

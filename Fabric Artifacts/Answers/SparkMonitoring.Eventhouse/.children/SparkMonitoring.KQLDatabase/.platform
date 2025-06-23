@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDatabase",
+    "displayName": "SparkMonitoring",
+    "description": "SparkMonitoring"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "72462db9-1597-9da7-4457-de02443e7b5b"
+  }
+}
