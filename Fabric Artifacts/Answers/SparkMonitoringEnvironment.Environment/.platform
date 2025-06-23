@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Environment",
+    "displayName": "SparkMonitoringEnvironment",
+    "description": "Environment"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "23f378f1-a232-9014-4bbe-36ba40874ac6"
+  }
+}
