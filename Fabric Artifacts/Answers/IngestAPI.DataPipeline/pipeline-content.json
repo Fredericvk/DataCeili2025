@@ -1,0 +1,161 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "paginationRules": {
+              "QueryParameters.{pagenumber}": "RANGE:1:42:1"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "/v1/breweries?per_page=200&page={pagenumber}"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "1ba1b040-1c26-4366-94e0-9de04f47ca7c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "api_breweries"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "Bronze",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "6734907e-9d23-4cb7-9769-7d987e29747c",
+                    "workspaceId": "4d01e414-5733-49f1-b10f-f95f3da9469f",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy Breweries",
+        "state": "Inactive",
+        "onInactiveMarkAs": "Succeeded",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "paginationRules": {
+              "QueryParameters.{pagenumber}": "RANGE:1:42:1"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "/v1/breweries?per_page=200&page={pagenumber}"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "1ba1b040-1c26-4366-94e0-9de04f47ca7c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "JsonSink",
+            "formatSettings": {
+              "type": "JsonWriteSettings"
+            },
+            "storeSettings": {
+              "type": "LakehouseWriteSettings"
+            },
+            "datasetSettings": {
+              "type": "Json",
+              "typeProperties": {
+                "location": {
+                  "type": "LakehouseLocation",
+                  "folderPath": {
+                    "value": "@pipeline().parameters.path",
+                    "type": "Expression"
+                  },
+                  "fileName": {
+                    "value": "@concat(string(pipeline().RunId),'.json')",
+                    "type": "Expression"
+                  }
+                }
+              },
+              "schema": {},
+              "linkedService": {
+                "name": "Bronze",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "7e29747c-7d98-9769-4cb7-9d236734907e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Files"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy Breweries_copy1",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "path": {
+        "type": "string",
+        "defaultValue": "test"
+      }
+    }
+  }
+}

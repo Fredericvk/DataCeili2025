@@ -1,0 +1,408 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "e1e6f789-e9a1-8746-4f15-a4a529d2c4c7",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "path": {
+              "value": {
+                "value": "@variables('path')",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "hc1"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "BronzeToSilver - Breweries",
+        "dependsOn": [
+          {
+            "activity": "Copy Breweries",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "ad70ead8-5d3f-b40a-4993-3b0259c9cbaf",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "path": {
+              "value": {
+                "value": "@variables('path')",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "hc1"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "BronzeToSilver - Beerreviews",
+        "dependsOn": [
+          {
+            "activity": "BronzeToSilver - Breweries",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "1bd2312b-7c3e-a001-4146-8766b831b742",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "path": {
+              "value": {
+                "value": "@variables('path')",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "hc1"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "BronzeToSilver - WorldData",
+        "dependsOn": [
+          {
+            "activity": "BronzeToSilver - Breweries",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "scripts": [
+            {
+              "text": {
+                "value": "ALTER TABLE gold_beerreviews\nDROP CONSTRAINT IF EXISTS FK_gold_beerreviews;\nTRUNCATE TABLE dbo.gold_breweries;\nINSERT INTO dbo.gold_breweries\nSELECT * FROM Silver.dbo.clean_breweries;",
+                "type": "Expression"
+              },
+              "type": "NonQuery"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "linkedService": {
+          "name": "Gold",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "0fe02c6f-5c36-471e-9fda-75498c711f7b",
+              "endpoint": "ucjet2migu3efeklz3bokqus3y-ctsactjtk7yutmip7fpt3kkgt4.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "4d01e414-5733-49f1-b10f-f95f3da9469f"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "SilverToGold - breweries",
+        "dependsOn": [
+          {
+            "activity": "BronzeToSilver - Beerreviews",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SqlServerStoredProcedure",
+        "typeProperties": {
+          "storedProcedureName": "[dbo].[sp_create_gold_beerreviews]"
+        },
+        "linkedService": {
+          "name": "Gold",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "0fe02c6f-5c36-471e-9fda-75498c711f7b",
+              "endpoint": "ucjet2migu3efeklz3bokqus3y-ctsactjtk7yutmip7fpt3kkgt4.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "4d01e414-5733-49f1-b10f-f95f3da9469f"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "SilverToGold - Beerreviews",
+        "dependsOn": [
+          {
+            "activity": "SilverToGold - breweries",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "path",
+          "value": {
+            "value": "@concat(formatDateTime(pipeline().TriggerTime, 'yyyy'),'/',formatDateTime(pipeline().TriggerTime, 'MM'),'/',formatDateTime(pipeline().TriggerTime, 'dd'),'/',string(pipeline().RunId))",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "SET Path",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "LakehouseTableSource",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "clean_worlddata"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "Silver",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "65613232-c41f-b27c-417f-294cf16dbefd",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "DataWarehouseSink",
+            "preCopyScript": "ALTER TABLE gold_breweries\nDROP CONSTRAINT FK_goldbreweriescountry;\n\nTRUNCATE TABLE [Gold].[dbo].[gold_worlddata]",
+            "allowCopyCommand": true,
+            "copyCommandSettings": {},
+            "disableMetricsCollection": false,
+            "datasetSettings": {
+              "type": "DataWarehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "gold_worlddata"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "Gold",
+                "properties": {
+                  "type": "DataWarehouse",
+                  "typeProperties": {
+                    "artifactId": "0fe02c6f-5c36-471e-9fda-75498c711f7b",
+                    "endpoint": "ucjet2migu3efeklz3bokqus3y-ctsactjtk7yutmip7fpt3kkgt4.datawarehouse.fabric.microsoft.com",
+                    "workspaceId": "4d01e414-5733-49f1-b10f-f95f3da9469f"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": true
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "SilverToGold - WorldData",
+        "dependsOn": [
+          {
+            "activity": "BronzeToSilver - WorldData",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Script",
+        "typeProperties": {
+          "scripts": [
+            {
+              "text": {
+                "value": "ALTER TABLE gold_breweries ADD CONSTRAINT FK_goldbreweriescountry FOREIGN KEY (country) REFERENCES gold_worlddata (country) NOT ENFORCED;",
+                "type": "Expression"
+              },
+              "type": "Query"
+            }
+          ],
+          "scriptBlockExecutionTimeout": "02:00:00"
+        },
+        "linkedService": {
+          "name": "Gold",
+          "properties": {
+            "type": "DataWarehouse",
+            "typeProperties": {
+              "artifactId": "0fe02c6f-5c36-471e-9fda-75498c711f7b",
+              "endpoint": "ucjet2migu3efeklz3bokqus3y-ctsactjtk7yutmip7fpt3kkgt4.datawarehouse.fabric.microsoft.com",
+              "workspaceId": "4d01e414-5733-49f1-b10f-f95f3da9469f"
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Add Foreign Key",
+        "dependsOn": [
+          {
+            "activity": "SilverToGold - WorldData",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "RestSource",
+            "requestMethod": "GET",
+            "paginationRules": {
+              "QueryParameters.{pagenumber}": "RANGE:1:42:1"
+            },
+            "httpRequestTimeout": "00:01:40",
+            "requestInterval": "00.00:00:00.010",
+            "datasetSettings": {
+              "type": "RestResource",
+              "typeProperties": {
+                "relativeUrl": "/v1/breweries?per_page=200&page={pagenumber}"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "1ba1b040-1c26-4366-94e0-9de04f47ca7c"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "OverwriteSchema",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "api_breweries"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "Bronze",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "7e29747c-7d98-9769-4cb7-9d236734907e",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            },
+            "columnFlattenSettings": {
+              "treatArrayAsString": false,
+              "treatStructAsString": false,
+              "flattenColumnDelimiter": "."
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy Breweries",
+        "dependsOn": [
+          {
+            "activity": "SET Path",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "variables": {
+      "path": {
+        "type": "String",
+        "defaultValue": "test/"
+      }
+    }
+  }
+}

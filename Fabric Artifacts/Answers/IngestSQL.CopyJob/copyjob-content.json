@@ -1,0 +1,61 @@
+{
+  "properties": {
+    "jobMode": "Batch",
+    "source": {
+      "type": "AzureSqlTable",
+      "connectionSettings": {
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+          "database": "BeerConsumptionDB"
+        },
+        "externalReferences": {
+          "connection": "87ae9e90-526a-4b48-8525-b6c1ebb033fe"
+        }
+      }
+    },
+    "destination": {
+      "type": "LakehouseTable",
+      "connectionSettings": {
+        "type": "Lakehouse",
+        "typeProperties": {
+          "workspaceId": "4d01e414-5733-49f1-b10f-f95f3da9469f",
+          "artifactId": "6734907e-9d23-4cb7-9769-7d987e29747c",
+          "rootFolder": "Tables"
+        }
+      }
+    },
+    "policy": {
+      "timeout": "0.12:00:00"
+    }
+  },
+  "activities": [
+    {
+      "id": "38d0b7b6-dd0f-4373-b4b1-9bb636244406",
+      "properties": {
+        "source": {
+          "datasetSettings": {
+            "schema": "dbo",
+            "table": "BeerConsumption2022"
+          }
+        },
+        "destination": {
+          "partitionOption": "None",
+          "writeBehavior": "Overwrite",
+          "datasetSettings": {
+            "table": "azsql_beerconsumption"
+          }
+        },
+        "enableStaging": false,
+        "translator": {
+          "type": "TabularTranslator"
+        },
+        "typeConversionSettings": {
+          "typeConversion": {
+            "allowDataTruncation": true,
+            "treatBooleanAsNumber": false
+          }
+        }
+      }
+    }
+  ]
+}
